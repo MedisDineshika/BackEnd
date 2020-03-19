@@ -8,36 +8,14 @@ import javax.persistence.Id;
 @Entity
 public class Product {
 
-	
-	public Product() {
-		
-	}
-
-	public Product(Integer id, String product_name, long price, int qty, String description, String colour, String size,
-			String brand, String category, String availabilty) {
-		super();
-		this.id = id;
-		this.product_name = product_name;
-		this.price = price;
-		this.qty = qty;
-		this.description = description;
-		this.colour = colour;
-		this.size = size;
-		this.brand = brand;
-		this.category = category;
-		this.availabilty = availabilty;
-	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 
-	private Integer id;
+	private long id;
 	
 	private String product_name;
 	
-	private long price ;
-	
-	private int qty;
 	
 	private String description ;
 	
@@ -52,13 +30,8 @@ public class Product {
 	
 	private String availabilty;
 
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
+	
+	
 
 	public String getProduct_name() {
 		return product_name;
@@ -68,21 +41,7 @@ public class Product {
 		this.product_name = product_name;
 	}
 
-	public long getPrice() {
-		return price;
-	}
-
-	public void setPrice(long price) {
-		this.price = price;
-	}
-
-	public int getQty() {
-		return qty;
-	}
-
-	public void setQty(int qty) {
-		this.qty = qty;
-	}
+	
 
 	public String getDescription() {
 		return description;

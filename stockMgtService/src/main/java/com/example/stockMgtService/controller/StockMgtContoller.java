@@ -14,14 +14,14 @@ import com.example.stockMgtService.service.StockService;
 
 
 @RestController @CrossOrigin(origins = "http://localhost:4200")
-@RequestMapping("/services/stock")
+@RequestMapping("/api/v1")
 public class StockMgtContoller {
 
 	
 	@Autowired 
 	StockService stockService;
 	
-	@PostMapping
+	@PostMapping("/stock")
 	public Product saveProduct(@RequestBody Product product) {
 	        return stockService.save(product);
 	    }
