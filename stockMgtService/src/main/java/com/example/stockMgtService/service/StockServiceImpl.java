@@ -1,5 +1,7 @@
 package com.example.stockMgtService.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,5 +16,10 @@ public class StockServiceImpl implements StockService {
 	public Product save (Product product) {
 		return stockRepository.save(product);
 		
+	}
+	@Override
+	public List<Product> findAll() {
+		// TODO Auto-generated method stub
+		return stockRepository.findAll();
 	}
 }
