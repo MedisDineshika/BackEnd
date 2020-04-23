@@ -2,6 +2,7 @@ package com.example.stockMgtService.controller;
 
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -28,8 +29,20 @@ public class StockMgtContoller {
 	public Product saveProduct(@RequestBody Product product) {
 	        return stockService.save(product);
 	    }
+	
+	
 	@GetMapping("/stock")
-    public List<Product> getAllEmployees() {
+    public List<Product> getAllProducts() {
         return stockService.findAll();
     }
+	
+	@GetMapping("/acc")
+    public Optional<Product> getProduct(Long id) {
+        return stockService.findByID(id);
+        
+    }
+	
+	
+	
+	
 }

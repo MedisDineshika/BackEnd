@@ -19,6 +19,10 @@ public class Product {
 	
 	private String description ;
 	
+	private long quantity;
+	
+	
+	private long price;
 	private String colour ;
 	
 	
@@ -28,7 +32,7 @@ public class Product {
 	
 	private String category ;
 	
-	private String availabilty;
+	private long reorderLevel;
 
 	
 	
@@ -83,13 +87,33 @@ public class Product {
 		this.category = category;
 	}
 
-	public String getAvailabilty() {
-		return availabilty;
+	
+
+	public long getQuantity() {
+		return quantity;
 	}
 
-	public void setAvailabilty(String availabilty) {
-		this.availabilty = availabilty;
+	public void setQuantity(long quantity) {
+		this.quantity = quantity;
 	}
+
+	public long getPrice() {
+		return price;
+	}
+
+	public void setPrice(long price) {
+		this.price = price;
+	}
+
+	public long getReorderLevel() {
+		return reorderLevel;
+	}
+
+	public void setReorderLevel(long reorderLevel) {
+		this.reorderLevel = reorderLevel;
+	}
+
+	
 	
 	
 	
