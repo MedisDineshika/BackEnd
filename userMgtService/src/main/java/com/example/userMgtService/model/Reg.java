@@ -1,5 +1,7 @@
 package com.example.userMgtService.model;
 
+
+
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -15,7 +17,7 @@ import javax.persistence.Table;
 public class Reg {
 	//Attiributes
 		@GeneratedValue @Id
-		private int id;
+		private long id;
 		@Column(name="first_name")
 		private String firstName;
 		
@@ -52,11 +54,13 @@ public class Reg {
 		
    		
 
-		public int getId() {
+		
+
+		public long getId() {
 			return id;
 		}
 
-		public void setId(int id) {
+		public void setId(long id) {
 			this.id = id;
 		}
 

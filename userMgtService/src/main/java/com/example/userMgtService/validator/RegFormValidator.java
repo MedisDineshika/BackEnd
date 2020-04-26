@@ -14,9 +14,11 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
+import com.example.userMgtService.model.Reg;
+import com.example.userMgtService.service.RegService;
 
-import com.pharmacy.model.Reg;
-import com.pharmacy.service.RegService;
+
+
 
 @Component
 public  class RegFormValidator implements Validator {

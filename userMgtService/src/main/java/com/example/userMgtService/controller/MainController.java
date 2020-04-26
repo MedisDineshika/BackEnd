@@ -23,6 +23,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.userMgtService.model.Reg;
+import com.example.userMgtService.model.UserNotFoundException;
 import com.example.userMgtService.service.RegService;
 import com.example.userMgtService.validator.LoginformValidator;
 import com.example.userMgtService.validator.RegFormValidator;
@@ -56,13 +57,13 @@ public class MainController {
 	
 	
 	//DisplayLogin form
-	 @RequestMapping(value = "/", method = RequestMethod.GET)
-	 public String showLoginForm(Model model) {
+	// @RequestMapping(value = "/", method = RequestMethod.GET)
+	// public String showLoginForm(Model model) {
 
-			Reg reg = new Reg();
-			model.addAttribute("loginForm", reg);
-			return "LoginForm";
-		}
+			//Reg reg = new Reg();
+			//model.addAttribute("loginForm", reg);
+			//return "LoginForm";
+		//}
 		
    //Check login details and give access to the system based on privileges
 	   @RequestMapping(value = "/login/add" ,method = RequestMethod.POST)
@@ -175,7 +176,7 @@ public class MainController {
 	
 	}
 		@RequestMapping(value = "/reg/add/{id}", method = RequestMethod.GET)
-		public String showFilledREg(@PathVariable("id") int id, Model model) {
+		public String showFilledREg(@PathVariable("id") Long id, Model model) {
 
 		
 			Reg reg =regService.findByID(id);
@@ -189,7 +190,7 @@ public class MainController {
 		
 		
 		@RequestMapping(value = "/login/add/{id}", method = RequestMethod.GET)
-		public String showRegUser(@PathVariable("id") int id, Model model) {
+		public String showRegUser(@PathVariable("id") Long id, Model model) {
 
 		
 			Reg reg =regService.findByID(id);
@@ -202,7 +203,7 @@ public class MainController {
 		
 		// show update form
 				@RequestMapping(value = "/login/add/{id}/update", method = RequestMethod.GET)
-				public String showUpdateUserForm(@PathVariable("id") int id, Model model) {
+				public String showUpdateUserForm(@PathVariable("id") Long id, Model model) {
 
 					
 				Reg reg = regService.findByID(id);
@@ -215,33 +216,33 @@ public class MainController {
 				 
 				//list page
 				 
-				 @RequestMapping(value = "/login/users", method = RequestMethod.GET)
+				// @RequestMapping(value = "/login/users", method = RequestMethod.GET)
 					
-				 public String AllUsersForm(Model model) {
+				 //public String AllUsersForm(Model model) {
 
 					
 						
-							model.addAttribute("users", regService.findAll());
-							return "list";
+					//		model.addAttribute("users", regService.findAll());
+						//	return "list";
 
 						
-					}
+					//}
 
 						
 
 				//delete user
-					@RequestMapping(value = "/login/users/{id}/delete", method = RequestMethod.POST)
-					public void deleteUser(@PathVariable("id") int id, 
-						final RedirectAttributes redirectAttributes) {
+					//@RequestMapping(value = "/login/users/{id}/delete", method = RequestMethod.POST)
+					//public void deleteUser(@PathVariable("id") int id, 
+						//final RedirectAttributes redirectAttributes) {
 
 						
 
-					regService.delete(id);
+					//regService.delete(id);
 					
 						
 						
 
-					}
+					//}
 	
 				
 		

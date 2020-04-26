@@ -1,13 +1,16 @@
 package com.example.userMgtService.service;
 
 
-import java.util.List;
+
+
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.userMgtService.dao.RegDao;
+
+import com.example.userMgtService.dao.UserRepository;
 import com.example.userMgtService.model.Reg;
 
 //import com.fasterxml.jackson.databind.util.JSONPObject;
@@ -20,70 +23,74 @@ public class RegServiceImpl implements RegService {
 
 	
 	@Autowired
-	RegDao regDao;
+	UserRepository userRepository;
 	
 	
 	//Checking login details 
 	@Override
 	public Reg checkLogin(String userName, String password) {
 		
-		return regDao.checkLogin(userName, password);
+		return userRepository.checkLogin(userName, password);
 		
 	}
 
 	@Override
 	public void save(Reg reg) {
 		//reg.setPassword(bCryptPasswordEncoder.encode(reg.getPassword()));
-		regDao.save(reg);
+		userRepository.save(reg);
 		
 	}
 
 	@Override
-	public Reg findByID(int id) {
-		return regDao.findByID(id)	;
+	public Optional<Reg> findByID(long id) {
+		return userRepository.findById(id)	;
 	}
 
+	
 	@Override
 	public Reg checkUser(String userName) {
-		return regDao.checkUser(userName);
+		return userRepository.checkUser(userName);
 	}
 
 	//@Override
 	//public void save(RoleType roleType) {
-	//	regDao.save(roleType);
+	//	userRepository.save(roleType);
 		
 	//}
 
 	@Override
 	public void saveOrUpdate(Reg reg) {
 	if (findByID(reg.getId()) == null){
-			regDao.save(reg);
+			userRepository.save(reg);
 	}
 	else {
 			
 			
-			regDao.update(reg);
+			userRepository.update(reg);
 			
 		}
 			
 		}
 
 	@Override
-	public List<Reg> getAllUnRegUsers() {
-		return regDao.getAllUnRegUsers();
+	public Object getAllUnRegUsers() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
-	public List<Reg> findAll() {
-		return regDao.findAll();
+	public Reg findByID(Long id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
-	@Override
-	public void delete(int id) {
-		
-			regDao.delete(id);
-		}
+	
+	
 
+	
+	
+
+	
 		
 	}
 

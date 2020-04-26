@@ -1,6 +1,8 @@
 package com.example.userMgtService.service;
 
-import java.util.List;
+
+
+import java.util.Optional;
 
 import com.example.userMgtService.model.Reg;
 
@@ -20,8 +22,7 @@ public interface RegService {
 	
 	
 
-	Reg findByID(int id);
-
+	
 	//void save(RoleType roleType);
 
 	
@@ -36,7 +37,7 @@ public interface RegService {
 	
 	
 	
-	List<Reg> getAllUnRegUsers();
+	
 
 
 
@@ -46,11 +47,22 @@ public interface RegService {
 
 	void saveOrUpdate(Reg reg);
 
-	List<Reg> findAll();
+	
+
+
+	
 
 
 
-	void delete(int id);
+	Reg findByID(Long id);
+
+
+
+	Object getAllUnRegUsers();
+
+
+
+	Optional<Reg> findByID(long id);
 	
 
 	//Reg findAll();
