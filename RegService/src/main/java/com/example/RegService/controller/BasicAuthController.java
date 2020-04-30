@@ -13,7 +13,7 @@ import com.example.RegService.model.AuthenticationBean;
 public class BasicAuthController {
 
 	@GetMapping(path = "/basicauth")
-	public AuthenticationBean helloWorldBean() {
+	public AuthenticationBean AuthBean() {
 		return new AuthenticationBean("You are authenticated");
 	}	
 }
